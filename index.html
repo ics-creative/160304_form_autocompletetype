@@ -8,6 +8,17 @@
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <script type="text/javascript">
+  <!--
+  window.addEventListener("beforeunload", function (e) {
+    var confirmationMessage = "入力内容を破棄します。";
+
+    e.returnValue = confirmationMessage;
+    return confirmationMessage;
+  });
+  -->
+  </script>
+
 </head>
 <body>
 
@@ -17,25 +28,15 @@
       <h1>お問い合わせフォーム</h1>
     </div>
 
-    <form>
+    <form autocomplete="off">
       <table class="table">
         <tbody>
         <tr>
           <th>お名前</th>
           <td>
             <p>
-              <label><span>姓</span></label><input name="given-name" type="text" x-autocompletetype="given-name"></label>
-              <label><span>名</span></label><input name="surname" type="text" x-autocompletetype="surname"></label>
-            </p>
-          </td>
-        </tr>
-
-        <tr>
-          <th>フリガナ</th>
-          <td>
-            <p>
-              <label>セイ <input name="first-name" type="text" x-autocompletetype="given-name"/></label>
-              <label>メイ <input name="kana-surname" type="text" x-autocompletetype="surname"/> </label>
+              <label><span>姓</span><input name="given-name" type="text" autocomplete="given-name"></label>
+              <label><span>名</span><input name="family-name" type="text" autocomplete="family-name"></label>
             </p>
           </td>
         </tr>
@@ -44,12 +45,7 @@
           <th>電話番号</th>
           <td>
             <p>ご自宅
-              <input name="phone-national" type="text" x-autocompletetype="phone-national">
-            </p>
-            <p>携帯
-              <input name="celler" type="text" x-autocompletetype="phone-area-code">-
-              <input name="phone-local" type="text" x-autocompletetype="phone-local">-
-              <input name="phone-extension" type="text" x-autocompletetype="phone-extension">
+              <input type="tel" name="tel" autocomplete="tel">
             </p>
           </td>
         </tr>
@@ -59,7 +55,7 @@
           <th>郵便番号</th>
           <td>
             <p>
-              <input name="zipcode" type="text" id="postal-code" x-autocompletetype="postal-code"></label>
+              <input type="text" name="postal-code" autocomplete="postal-code">
             </p>
           </td>
         </tr>
@@ -70,7 +66,7 @@
           <th>ご自宅住所</th>
           <td>
             <p>
-              <select name="locality" x-autocompletetype="locality">
+              <select name="address-level1" autocomplete="address-level1">
                 <option selected>都道府県</option>
                 <option value="1">北海道</option>
                 <option value="2">青森県</option>
@@ -123,13 +119,13 @@
             </p>
 
             <p>
-              <input name="city" type="text" x-autocompletetype="city">
+              <input type="text" name="address-level2" autocomplete="address-level2">
             </p>
             <p>
-              <input name="address-line1" type="text" x-autocompletetype="address-line2">
+              <input type="text" name="address-line1" autocomplete="address-line1">
             </p>
             <p>
-              <input name="address-line2" type="text" x-autocompletetype="address-line3">
+              <input type="text" name="address-line2" autocomplete="address-line2">
             </p>
           </td>
         </tr>
@@ -137,21 +133,21 @@
         <tr>
           <th>メール</th>
           <td>
-            <input name="email" type="text" x-autocompletetype="email">
+            <input name="email" type="email" autocomplete="email">
           </td>
         </tr>
 
         <tr>
           <th>所属</th>
           <td>
-            <input name="organization" type="text" x-autocompletetype="organization">
+            <input type="text" name="organization" autocomplete="organization" autocorrect="off" autocapitalize="off">
           </td>
         </tr>
 
         <tr>
           <th>部署</th>
           <td>
-            <input name="organization-title" type="text" x-autocompletetype="organization-title">
+            <input type="text" name="organization-title" autocomplete="organization-title" autocorrect="off" autocapitalize="off">
           </td>
         </tr>
 
@@ -160,8 +156,8 @@
           <th>性別</th>
           <td>
             <p>
-              <label><input type="radio" name="gender" value="femail" x-autocompletetype="gender">女性</label>
-              <label><input type="radio" name="gender" value="man" x-autocompletetype="gender">男性</label>
+              <label><input type="radio" name="sex" value="man" autocomplete="sex">男性</label>
+              <label><input type="radio" name="sex" value="femail" autocomplete="sex">女性</label>
             </p>
           </td>
         </tr>
@@ -173,7 +169,7 @@
           <td>
 
             <p>
-              <select name="birthday-year" x-autocompletetype="birthday-year">
+              <select name="bday-year" autocomplete="bday-year">
                 <option selected="">----</option>
                 <option value="2016">2016/平成28</option>
                 <option value="2015">2015/平成27</option>
@@ -268,7 +264,7 @@
                 <option value="1926">1926/昭和元</option>
               </select>
               <label 年</label>
-              <select name="birthday-month" class="w56" id="birthday-month" x-autocompletetype="birthday-month">
+              <select name="bday-month" class="w56" id="bday-month" autocomplete="bday-month">
                 <option selected="">--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -284,7 +280,7 @@
                 <option value="12">12</option>
               </select>
               <label>月</label>
-              <select name="birthday-day" class="w56" id="birthday-day" x-autocompletetype="birthday-day">
+              <select name="bday-day" class="w56" id="bday-day" autocomplete="bday-day">
                 <option selected="">--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
