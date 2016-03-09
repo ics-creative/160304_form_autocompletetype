@@ -14,7 +14,7 @@
     window.addEventListener("beforeunload", function (event) {
       var confirmationMessage = "入力内容を破棄します。";
 
-      e.returnValue = confirmationMessage;
+      event.returnValue = confirmationMessage;
       return confirmationMessage;
     });
   </script>
