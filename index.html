@@ -27,63 +27,63 @@
       <h1>申し込みフォーム (サンプル)</h1>
     </div>
 
-    <form class="form-horizontal">
+    <form >
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">お名前 <span class="badge badge-danger">必須</span></label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">お名前 <span class="badge badge-danger">必須</span></label>
         <div class="col-sm-10">
-          <input type="text" name="name" autocomplete="name" class="form-control" placeholder="お名前" required/>
+          <input type="text" name="name" autocomplete="name" class="form-control form-control-sm" placeholder="お名前" required/>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">電話番号 <span class="badge badge-danger">必須</span></label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">電話番号 <span class="badge badge-danger">必須</span></label>
         <div class="col-sm-10">
-          <input type="tel" name="tel" autocomplete="tel" class="form-control" placeholder="電話番号" required/>
+          <input type="tel" name="tel" autocomplete="tel" class="form-control form-control-sm" placeholder="電話番号" required/>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">郵便番号 <span class="badge badge-danger">必須</span></label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">郵便番号 <span class="badge badge-danger">必須</span></label>
         <div class="col-sm-10">
-          <input type="text" name="postal-code" autocomplete="postal-code" class="form-control" placeholder="郵便番号" required/>
+          <input type="text" name="postal-code" autocomplete="postal-code" class="form-control form-control-sm" placeholder="郵便番号" required/>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">ご自宅住所 <span class="badge badge-danger">必須</span></label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">ご自宅住所 <span class="badge badge-danger">必須</span></label>
         <div class="col-sm-10">
           <p>
-            <input type="text" name="address-level1" autocomplete="address-level1" class="form-control" placeholder="都道府県" required/>
+            <input type="text" name="address-level1" autocomplete="address-level1" class="form-control form-control-sm" placeholder="都道府県" required/>
           </p>
           <p>
-            <input type="text" name="address-level2" autocomplete="address-level2" class="form-control" placeholder="市区町村" required/>
+            <input type="text" name="address-level2" autocomplete="address-level2" class="form-control form-control-sm" placeholder="市区町村" required/>
           </p>
           <p>
-            <input type="text" name="address-line1" autocomplete="address-line1" class="form-control" placeholder="番地等" required/>
+            <input type="text" name="address-line1" autocomplete="address-line1" class="form-control form-control-sm" placeholder="番地等" required/>
           </p>
           <p>
-            <input type="text" name="address-line2" autocomplete="address-line2" class="form-control" placeholder="アパート／マンション名等"/>
+            <input type="text" name="address-line2" autocomplete="address-line2" class="form-control form-control-sm" placeholder="アパート／マンション名等"/>
           </p>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">メールアドレス <span class="badge badge-danger">必須</span></label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">メールアドレス <span class="badge badge-danger">必須</span></label>
         <div class="col-sm-10">
-          <input type="email" name="email" autocomplete="email" class="form-control" placeholder="メールアドレス" required/>
+          <input type="email" name="email" autocomplete="email" class="form-control form-control-sm" placeholder="メールアドレス" required/>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">お勤め先</label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">お勤め先</label>
         <div class="col-sm-10">
-          <input type="text" name="organization" autocomplete="organization" autocorrect="off" autocapitalize="off" class="form-control" placeholder="お勤め先"/>
+          <input type="text" name="organization" autocomplete="organization" autocorrect="off" autocapitalize="off" class="form-control form-control-sm" placeholder="お勤め先"/>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">生年月日</label>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label-sm">生年月日</label>
         <div class="col-sm-10">
           <select name="bday-year" autocomplete="bday-year">
             <option selected="">----</option>
@@ -204,8 +204,8 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
           <button type="submit" class="btn page-link text-dark d-inline-block">確認する (どこにも送信しません)</button>
         </div>
       </div>
