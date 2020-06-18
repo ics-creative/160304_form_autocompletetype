@@ -105,11 +105,13 @@
 
       <div class="form-row">
 
-        
-        <label class="col-sm-2 col-form-label">生年月日</label>
-        
-          <div class="col-auto">
 
+
+        <label class="col-sm-2 col-form-label">生年月日</label>
+
+        
+        <div class="col-auto">
+          <div class="form-inline">
 
             <select class="custom-select" 　name="bday-year" autocomplete="bday-year">
               <option selected="">----</option>
@@ -178,13 +180,14 @@
 
             <label>年</label>
 
-
-
           </div>
 
+        </div>
 
 
-          <div class="col-auto">
+
+        <div class="col-auto">
+          <div class="form-inline">
 
             <select class="custom-select" 　name="bday-month" autocomplete="bday-month">
               <option selected="">--</option>
@@ -202,15 +205,16 @@
               <option value="12">12</option>
             </select>
             <label>月</label>
-
           </div>
+        </div>
+        
 
 
 
 
-          <div class="col-auto">
+        <div class="col-auto">
 
-
+          <div class="form-inline">
             <select class="custom-select" 　name="bday-day" autocomplete="bday-day">
               <option selected="">--</option>
               <option value="1">1</option>
@@ -246,15 +250,19 @@
               <option value="31">31</option>
             </select>
             <label>日</label>
-
           </div>
-        
+        </div>
+
       </div>
 
       <div class="form-row">
+        
         <div class="offset-sm-2 col-sm-10">
-          <button type="submit" class="btn btn-primary">確認する (どこにも送信しません)</button>
+          
+            <button type="submit" class="btn btn-primary">確認する (どこにも送信しません)</button>
+          
         </div>
+      
       </div>
 
     </form>
