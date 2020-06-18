@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
   <!-- Latest compiled and minified CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-
-
   <script>
     window.addEventListener("beforeunload", function (event) {
       var confirmationMessage = "入力内容を破棄します。";
@@ -20,13 +15,9 @@
       return confirmationMessage;
     });
   </script>
-
 </head>
-
 <body>
-
   <div class="container">
-
     <div class="navbar">
       <h1>申し込みフォーム (サンプル)</h1>
     </div>
@@ -107,7 +98,7 @@
 
         <div class="col-sm-9">
 
-          <select class="custom-select w-25" name="bday-year" autocomplete="bday-year">
+          <select class="custom-select w-25" title="生年月日(西暦)" name="bday-year" autocomplete="bday-year">
             <option selected="">----</option>
             <option value="2010">2010</option>
             <option value="2009">2009</option>
@@ -171,9 +162,7 @@
             <option value="1951">1951</option>
             <option value="1950">1950</option>
           </select>
-
-          <label>年</label>
-
+          年
           <select class="custom-select w-25" name="bday-month" autocomplete="bday-month">
             <option selected="">--</option>
             <option value="1">1</option>
@@ -189,8 +178,7 @@
             <option value="11">11</option>
             <option value="12">12</option>
           </select>
-          <label>月</label>
-
+          月
           <select class="custom-select w-25" name="bday-day" autocomplete="bday-day">
             <option selected="">--</option>
             <option value="1">1</option>
@@ -225,14 +213,13 @@
             <option value="30">30</option>
             <option value="31">31</option>
           </select>
-
-          <label>日</label>
+          日
         </div>
 
       </div>
 
       <div class="text-center my-5">
-          <button type="submit" class="btn btn-primary">確認する (どこにも送信しません)</button>
+        <button type="submit" class="btn btn-primary">確認する (どこにも送信しません)</button>
       </div>
 
     </form>
