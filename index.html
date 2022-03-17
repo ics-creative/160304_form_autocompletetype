@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <!-- Latest compiled and minified CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
   <script>
     window.addEventListener("beforeunload", function (event) {
       var confirmationMessage = "入力内容を破棄します。";
@@ -24,76 +23,119 @@
 
     <form>
 
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">お名前 <span class="badge badge-danger">必須</span></label>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">お名前 <span class="badge bg-danger">必須</span></label>
+        <div class="col-sm-9">
+
+          <div class="row">
+            <label class="col-form-label col-sm-1">姓</label>
+            <div class="col-sm">
+              <input type="text"
+                     name="family-name"
+                     autocomplete="family-name"
+                     class="form-control"
+                     placeholder="田中"
+                     required/>
+            </div>
+            <label class="col-form-label col-sm-1">名</label>
+            <div class="col-sm">
+              <input type="text"
+                     name="given-name"
+                     autocomplete="given-name"
+                     class="form-control"
+                     placeholder="太郎"
+                     required/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="col-sm-3 col-form-label">電話番号 <span class="badge bg-danger">必須</span></label>
         <div class="col-sm-9">
           <p>
-            <input type="text" name="name" autocomplete="name" class="form-control" placeholder="お名前" required />
+            <input type="tel" name="tel" autocomplete="tel" class="form-control" placeholder="090-0000-0000" required/>
           </p>
         </div>
       </div>
 
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">電話番号 <span class="badge badge-danger">必須</span></label>
-        <div class="col-sm-9">
-          <p>
-            <input type="tel" name="tel" autocomplete="tel" class="form-control" placeholder="電話番号" required />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">郵便番号 <span class="badge badge-danger">必須</span></label>
+      <div class="row">
+        <label class="col-sm-3 col-form-label">郵便番号 <span class="badge bg-danger">必須</span></label>
         <div class="col-sm-9">
           <p>
             <input type="text" name="postal-code" autocomplete="postal-code" class="form-control" placeholder="郵便番号"
-              required />
+                   required/>
           </p>
         </div>
       </div>
 
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">ご自宅住所 <span class="badge badge-danger">必須</span></label>
+      <div class="row">
+        <label class="col-sm-3 col-form-label">ご自宅住所 <span class="badge bg-danger">必須</span></label>
+        <div class="col-sm-9">
+          <div class="row mb-3">
+            <label class="col-form-label col-sm-4">都道府県</label>
+            <div class="col-sm-8">
+              <input type="text" name="address-level1"
+                     autocomplete="address-level1"
+                     class="form-control"
+                     placeholder="東京都" required/>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-form-label col-sm-4">市区町村</label>
+            <div class="col-sm-8">
+              <input type="text" name="address-level2" autocomplete="address-level2" class="form-control"
+                     placeholder="中央区" required/>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label class="col-form-label col-sm-4">番地等</label>
+            <div class="col-sm-8">
+              <input type="text" name="address-line1" autocomplete="address-line1" class="form-control"
+                     placeholder="◯丁目◯番"
+                     required/>
+            </div>
+          </div>
+
+
+          <div class="row mb-3">
+            <label class="col-form-label col-sm-4">建物名・部屋番号等</label>
+            <div class="col-sm-8">
+              <input type="text" name="address-line2" autocomplete="address-line2" class="form-control"
+                     placeholder="コーポ◯◯ 101号室"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="col-sm-3 col-form-label">メールアドレス <span class="badge bg-danger">必須</span></label>
         <div class="col-sm-9">
           <p>
-            <input type="text" name="address-level1" autocomplete="address-level1" class="form-control"
-              placeholder="都道府県" required />
-          </p>
-          <p>
-            <input type="text" name="address-level2" autocomplete="address-level2" class="form-control"
-              placeholder="市区町村" required />
-          </p>
-          <p>
-            <input type="text" name="address-line1" autocomplete="address-line1" class="form-control" placeholder="番地等"
-              required />
-          </p>
-          <p>
-            <input type="text" name="address-line2" autocomplete="address-line2" class="form-control"
-              placeholder="アパート／マンション名等" />
+            <input type="email" name="email" autocomplete="email" class="form-control" placeholder="yourname@example.com"
+                   required/>
           </p>
         </div>
       </div>
 
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">メールアドレス <span class="badge badge-danger">必須</span></label>
-        <div class="col-sm-9">
-          <p>
-            <input type="email" name="email" autocomplete="email" class="form-control" placeholder="メールアドレス" required />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
+      <div class="row">
         <label class="col-sm-3 col-form-label">お勤め先</label>
         <div class="col-sm-9">
           <p>
-            <input type="text" name="organization" autocomplete="organization" autocorrect="off" autocapitalize="off"
-              class="form-control" placeholder="お勤め先" />
+            <input type="text"
+                   name="organization"
+                   autocomplete="organization"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   class="form-control"
+                   placeholder="お勤め先"/>
           </p>
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="row">
         <label class="col-sm-3 col-form-label">生年月日</label>
 
         <div class="col-sm-9">
