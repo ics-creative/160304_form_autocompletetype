@@ -4,11 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <title>申し込みフォーム (サンプル)</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script>
-    window.addEventListener("beforeunload", function (event) {
-      var confirmationMessage = "入力内容を破棄します。";
+    window.addEventListener("beforeunload", (event) => {
+      const confirmationMessage = "入力内容を破棄します。";
 
       event.returnValue = confirmationMessage;
       return confirmationMessage;
@@ -54,7 +55,7 @@
         <label class="col-sm-3 col-form-label">電話番号 <span class="badge bg-danger">必須</span></label>
         <div class="col-sm-9">
           <p>
-            <input type="tel" name="tel" autocomplete="tel" class="form-control" placeholder="090-0000-0000" required/>
+            <input type="tel" name="tel" autocomplete="tel" class="form-control" placeholder="09000000000" required/>
           </p>
         </div>
       </div>
@@ -130,7 +131,7 @@
                    autocorrect="off"
                    autocapitalize="off"
                    class="form-control"
-                   placeholder="お勤め先"/>
+                   placeholder="◯◯株式会社"/>
           </p>
         </div>
       </div>
@@ -138,9 +139,9 @@
       <div class="row">
         <label class="col-sm-3 col-form-label">生年月日</label>
 
-        <div class="col-sm-9">
+        <div class="col-sm-9 d-flex align-items-center gap-2">
 
-          <select class="custom-select w-25" title="生年月日(西暦)" name="bday-year" autocomplete="bday-year">
+          <select class="form-select w-25" title="生年月日(西暦)" name="bday-year" autocomplete="bday-year">
             <option selected="">----</option>
             <option value="2010">2010</option>
             <option value="2009">2009</option>
@@ -205,7 +206,7 @@
             <option value="1950">1950</option>
           </select>
           年
-          <select class="custom-select w-25" title="生年月日(月)" name="bday-month" autocomplete="bday-month">
+          <select class="form-select w-25" title="生年月日(月)" name="bday-month" autocomplete="bday-month">
             <option selected="">--</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -221,7 +222,7 @@
             <option value="12">12</option>
           </select>
           月
-          <select class="custom-select w-25" title="生年月日(日)" name="bday-day" autocomplete="bday-day">
+          <select class="form-select w-25" title="生年月日(日)" name="bday-day" autocomplete="bday-day">
             <option selected="">--</option>
             <option value="1">1</option>
             <option value="2">2</option>
