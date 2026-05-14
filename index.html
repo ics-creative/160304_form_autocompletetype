@@ -11,8 +11,9 @@
     <h1>申し込みフォーム (サンプル)</h1>
 
     <form>
+      <!-- ブラウザの自動入力に合わせて、氏名は姓・名に分割 -->
       <div class="field">
-        <div class="field-name">お名前 <b>必須</b></div>
+        <div class="field-name">お名前 <span class="required">必須</span></div>
         <div class="field-body split">
           <label>姓
             <input type="text" name="family-name" autocomplete="family-name" placeholder="田中" required/>
@@ -23,8 +24,9 @@
         </div>
       </div>
 
+      <!-- Chrome の自動入力が判別できる name と autocomplete -->
       <div class="field">
-        <div class="field-name">フリガナ <b>必須</b></div>
+        <div class="field-name">フリガナ <span class="required">必須</span></div>
         <div class="field-body split">
           <label>セイ
             <input type="text" name="family-name-phonetic" autocomplete="family-name" placeholder="タナカ" required/>
@@ -36,17 +38,18 @@
       </div>
 
       <label class="field">
-        <span class="field-name">電話番号 <b>必須</b></span>
+        <span class="field-name">電話番号 <span class="required">必須</span></span>
         <input type="tel" name="tel" autocomplete="tel" placeholder="09000000000" required/>
       </label>
 
       <label class="field">
-        <span class="field-name">郵便番号 <b>必須</b></span>
+        <span class="field-name">郵便番号 <span class="required">必須</span></span>
         <input type="text" name="postal-code" autocomplete="postal-code" placeholder="郵便番号" required/>
       </label>
 
+      <!-- HTML autocomplete の住所階層に合わせた分割 -->
       <div class="field">
-        <div class="field-name">ご自宅住所 <b>必須</b></div>
+        <div class="field-name">ご自宅住所 <span class="required">必須</span></div>
         <div class="field-body">
           <label>都道府県
             <input type="text" name="address-level1" autocomplete="address-level1" placeholder="東京都" required/>
@@ -64,15 +67,17 @@
       </div>
 
       <label class="field">
-        <span class="field-name">メールアドレス <b>必須</b></span>
+        <span class="field-name">メールアドレス <span class="required">必須</span></span>
         <input type="email" name="email" autocomplete="email" placeholder="yourname@example.com" required/>
       </label>
 
       <label class="field">
         <span class="field-name">お勤め先</span>
+        <!-- iOS の自動大文字化・自動補正による会社名の変化を防止 -->
         <input type="text" name="organization" autocomplete="organization" autocorrect="off" autocapitalize="off" placeholder="◯◯株式会社"/>
       </label>
 
+      <!-- 年月日の候補は下のスクリプトで生成 -->
       <div class="field">
         <div class="field-name">生年月日</div>
         <div class="birthday">
@@ -87,19 +92,32 @@
   </main>
 
   <script type="module">
+    // 再読み込み・タブを閉じる操作の前に、入力内容の破棄確認
     addEventListener("beforeunload", (event) => {
-      event.returnValue = "入力内容を破棄します。";
+      // 既定の移動処理を止めて、ブラウザの確認ダイアログ表示
+      event.preventDefault();
     });
 
+    // 生年月日の選択肢を設定リストから生成
+    // option の大量記述を避け、年・月・日の範囲をこの配列に集約
     for (const [name, start, end, blank] of [
+      // 年だけ新しい年から古い年へ降順
       ["bday-year", 2010, 1950, "----"],
+      // 月と日は自然な昇順
       ["bday-month", 1, 12, "--"],
       ["bday-day", 1, 31, "--"],
     ]) {
+      // name 属性から対象の select を取得
       const select = document.querySelector(`[name="${name}"]`);
+      // start と end の大小に合わせて増減方向を決定
       const step = start < end ? 1 : -1;
+
+      // 先頭に未選択用の空 option を追加
       select.append(new Option(blank));
+
+      // end を含めるため、end + step の直前まで反復
       for (let value = start; value !== end + step; value += step) {
+        // 表示テキストと送信値に同じ数値を設定
         select.append(new Option(value, value));
       }
     }

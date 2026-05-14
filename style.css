@@ -10,6 +10,7 @@ body {
   line-height: 1.5;
 }
 
+/* ページ幅だけを制限し、フォーム内の配置は各 field に任せる。 */
 main {
   inline-size: min(100%, 960px);
   margin-inline: auto;
@@ -21,11 +22,13 @@ h1 {
   font-size: 2rem;
 }
 
+/* form と複数入力の field-body は同じ間隔の Grid にする。 */
 :where(form, .field-body) {
   display: grid;
   gap: 16px;
 }
 
+/* field は左に項目名、右に入力UIを置く基本レイアウト。 */
 .field {
   display: grid;
   grid-template-columns: 25% minmax(0, 1fr);
@@ -37,10 +40,12 @@ h1 {
   }
 }
 
+/* field-name と label の縦余白をそろえて、単一入力と複数入力の高さを合わせる。 */
 :where(.field-name, label) {
   padding-block: 8px;
 }
 
+/* 住所などの縦並びグループでは、各 label の中をさらに Grid にする。 */
 .field-body {
   label {
     display: grid;
@@ -53,6 +58,7 @@ h1 {
   }
 }
 
+/* 姓名のような2分割フィールド。狭い画面では下の media query で1列に戻る。 */
 .split {
   grid-template-columns: 1fr 1fr;
   @media (width < 640px) {
@@ -63,7 +69,8 @@ h1 {
   }
 }
 
-b {
+/* 必須バッジ。required 属性と同じ必須項目を視覚的に示す。 */
+.required {
   padding: 4px 8px;
   border-radius: 4px;
   background: #dc3545;
@@ -71,6 +78,7 @@ b {
   font-size: 0.75em;
 }
 
+/* input と select は同じフォームコントロールとして見せる。 */
 :where(input, select) {
   inline-size: 100%;
   padding: 8px 16px;
@@ -79,6 +87,7 @@ b {
   font: inherit;
 }
 
+/* 生年月日は select と単位文字を横並びにする。 */
 .birthday {
   display: flex;
   align-items: center;
@@ -93,11 +102,13 @@ b {
   }
 }
 
+/* 送信ボタンだけ中央寄せにする。 */
 .actions {
   margin-block: 64px;
   text-align: center;
 }
 
+/* このサンプルでは送信しないが、ボタンらしい見た目だけ付ける。 */
 button {
   padding: 8px 16px;
   border: 2px solid #0d6efd;
