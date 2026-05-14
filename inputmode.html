@@ -1,97 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>inputmode属性の紹介 (サンプル)</title>
-  <!-- Latest compiled and minified CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
-    <div class="navbar">
-      <h1>inputmode属性の紹介 (サンプル)</h1>
-    </div>
+  <main>
+    <h1>inputmode属性の紹介 (サンプル)</h1>
 
     <form>
-
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">実数</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="decimal" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">数字</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="numeric" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">電話</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="tel" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">メール</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="email" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">検索入力</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="search" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">URL</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="url" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">テキスト</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="text" />
-          </p>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="col-sm-3 col-form-label">仮想キーボードなし</label>
-        <div class="col-sm-9">
-          <p>
-            <input type="text" class="form-control" inputmode="none" />
-          </p>
-        </div>
-      </div>
-
-
+      <label class="field">
+        <span class="field-name">実数</span>
+        <input type="text" inputmode="decimal"/>
+      </label>
+      <label class="field">
+        <span class="field-name">数字</span>
+        <input type="text" inputmode="numeric"/>
+      </label>
+      <label class="field">
+        <span class="field-name">電話</span>
+        <input type="text" inputmode="tel"/>
+      </label>
+      <label class="field">
+        <span class="field-name">メール</span>
+        <input type="text" inputmode="email"/>
+      </label>
+      <label class="field">
+        <span class="field-name">検索入力</span>
+        <input type="text" inputmode="search"/>
+      </label>
+      <label class="field">
+        <span class="field-name">URL</span>
+        <input type="text" inputmode="url"/>
+      </label>
+      <label class="field">
+        <span class="field-name">テキスト</span>
+        <input type="text" inputmode="text"/>
+      </label>
+      <label class="field">
+        <span class="field-name">仮想キーボードなし</span>
+        <input type="text" inputmode="none"/>
+      </label>
     </form>
-  </div>
+  </main>
 </body>
 </html>

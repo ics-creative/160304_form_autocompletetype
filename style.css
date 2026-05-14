@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #212529;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+main {
+  inline-size: min(100%, 960px);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+h1 {
+  margin-block: 24px;
+  font-size: 2rem;
+}
+
+:where(form, .field-body) {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 25% minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: start;
+
+  @media (width < 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+:where(.field-name, label) {
+  padding-block: 8px;
+}
+
+.field-body {
+  label {
+    display: grid;
+    grid-template-columns: 33% minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    @media (width < 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.split {
+  grid-template-columns: 1fr 1fr;
+  @media (width < 640px) {
+    grid-template-columns: 1fr;
+  }
+  label {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+}
+
+b {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #dc3545;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+:where(input, select) {
+  inline-size: 100%;
+  padding: 8px 16px;
+  border: 2px solid #ced4da;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.birthday {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  select {
+    inline-size: 25%;
+  }
+
+  @media (width < 640px) {
+    flex-wrap: wrap;
+  }
+}
+
+.actions {
+  margin-block: 64px;
+  text-align: center;
+}
+
+button {
+  padding: 8px 16px;
+  border: 2px solid #0d6efd;
+  border-radius: 4px;
+  background: #0d6efd;
+  color: #fff;
+  font: inherit;
+}
