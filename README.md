@@ -2,7 +2,10 @@
 
 HTML の `autocomplete` 属性や `inputmode` 属性を確認するためのサンプルです。
 
-解説記事: [今どきの入力フォームはこう書く！ HTMLコーダーがおさえるべきinputタグの書き方まとめ](https://ics.media/entry/11221/)
+解説記事:
+
+- [今どきの入力フォームはこう書く！ HTMLコーダーがおさえるべきinputタグの書き方まとめ](https://ics.media/entry/11221/)
+- [How to write modern HTML forms: A guide to the input element](https://ics.media/en/entry/11221/)
 
 ## ファイル
 
